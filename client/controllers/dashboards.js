@@ -54,4 +54,10 @@ discussionBoard.controller('DashBoardController', function($scope, UserFactory, 
     $scope.newTopic = {};
   }
 
+  $scope.addCat = function(){
+    TopicFactory.addCat($scope.newCat, function(data){
+      console.log("Added a category", data);
+    })
+  }
+
 })//closes CustomersController

@@ -28,5 +28,10 @@ discussionBoard.factory('TopicFactory', function($http){
       callback(res.message);
     })
   }
+  factory.addCat = function(newcat, callback){
+    $http.post('/newcat', newcat).success(function(res){
+      callback(res.message);
+    })
+  }
   return factory;
 })

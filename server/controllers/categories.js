@@ -13,20 +13,20 @@ module.exports = (function(){
       }
   	});
   },//closes index
-//   create: function(req, res){
-//     console.log("Luke's", req.body.product);
-//     var topic = new Topic({
-//       name: req.body.name
-//                 });
-//     topic.save(function(err){
-//       if(err){
-//         res.json(err);
-//       }
-//       else {
-//         res.json({message: "Successfully added "+ req.body.name});
-//       }
-//     })
-//   },//closes create
+  create: function(req, res){
+    console.log("Luke's", req.body);
+    var cat = new Category({
+      name: req.body.name
+                });
+    cat.save(function(err){
+      if(err){
+        res.json(err);
+      }
+      else {
+        res.json({message: "Successfully added "+ req.body.name});
+      }
+    })
+  },//closes create
 // //
 // //   delete: function(req, res){
 // //     Order.remove({_id: req}, function(err){

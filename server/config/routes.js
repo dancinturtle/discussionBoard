@@ -21,9 +21,9 @@ module.exports = function(app){
   app.get('/categories', function(req, res){
     categories.getcategories(req, res);
   })
-  // app.post('/placeorders', function(req, res){
-  //   orders.create(req, res);
-  // })
+  app.post('/newcat', function(req, res){
+    categories.create(req, res);
+  })
   app.get('/topics', function(req, res){
     topics.index(req, res);
   })
