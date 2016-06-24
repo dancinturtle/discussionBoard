@@ -1,0 +1,106 @@
+
+<div ng-controller="DashBoardController">
+
+
+  <h2>Welcome, Ford Prefect!</h2>
+  <div class="searchbar">
+    <form role="form" class="form-inline">
+      <input type='text' />
+      <button class="btn btn-success">Search</button>
+    </form>
+  </div>
+  <table class="table table-striped table-condensed">
+    <thead>
+      <th>Category</th>
+      <th>Topic</th>
+      <th>User Name</th>
+      <th>Posts</th>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Ruby on Rails</td>
+        <td>Best/easiest way to encrypt password?</td>
+        <td>Joe</td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td>MySQL</td>
+        <td>Database structure?</td>
+        <td>sphinx</td>
+        <td>9</td>
+      </tr>
+    </tbody>
+  </table>
+  <br />
+  <h3>Add a new topic</h3>
+  <form role="form">
+    <div class="form-group">
+      <label for="topic">Topic:</label>
+      <input type="text" class="form-control" name="topic" />
+    </div>
+    <div class="form-group">
+      <label for="desc">Description:</label>
+      <textarea rows="5" cols="50" name="desc"></textarea>
+    </div>
+    <div class="form=group">
+      <label for="cat">Category:</label>
+      <select name="cat">
+        <option>HTML</option>
+        <option>MySQL</option>
+        <option>UX</option>
+        <option>Web Development</option>
+        <option>Swift</option>
+      </select>
+    </div>
+    <button class="btn btn-success">Submit</button>
+
+
+  </form>
+
+
+  <a href="#/topic/2">A link to click to the topic</a>
+  <a href="#/profile/hi">A link to click to the profile page</a>
+  <!-- <br />
+  <div class="row">
+    <div class="col-md-2">
+      <form>
+        <input type='text' placeholder='search...' ng-model="searchProducts.name"/>
+        <br />
+        <button>Filter</button>
+      </form>
+    </div>
+    <div class="col-md-10">
+
+      <div class="picdiv" ng-repeat="product in products | filter: searchProducts | orderBy: '-quantity' | limitTo: displayPicNum ">
+        <img src="{{product.url}}"/>
+        <h5 ng-bind="product.name"></h5>
+        <p>(<span ng-bind="product.quantity"></span> left)</p>
+      </div>
+
+      <div class="row showmore">
+        <p><a href='#/' ng-click='updatePicNum()'>show more...</a></p>
+      </div>
+      <h4>Recent orders</h4>
+        <div ng-repeat="order in orders | orderBy: '-_id' | limitTo: orderNum">
+          <p>
+            <span ng-bind="order.name"></span> purchased <span ng-bind="order.quantity"></span> <span ng-bind="order.product"></span> on <span ng-bind="order.createdAt"></span>
+          </p>
+        </div>
+        <a  href='#/' ng-click='updateOrderNum()' ng-show="show">show all orders...</a>
+        <a href='#/' ng-click='updateOrderNum()' ng-hide="show">collapse orders...</a>
+        <h4>New customers</h4>
+          <div ng-repeat="customer in customers | orderBy: '-_id' | limitTo: custNum">
+          <p> <span ng-bind="customer.name"></span> joined the store. (
+              <span ng-bind='customer.timeHere.weeks' ng-if='customer.timeHere.weeks'></span><span ng-if="customer.timeHere.weeks"> weeks </span>
+              <span ng-if='customer.timeHere.days' ng-bind='customer.timeHere.days'></span><span ng-if='customer.timeHere.days'> days </span>
+              <span ng-bind='customer.timeHere.hours' ng-if='customer.timeHere.hours'></span><span ng-if='customer.timeHere.hours'> hours </span>
+              <span ng-bind='customer.timeHere.minutes' ng-if="customer.timeHere.minutes"></span><span ng-if='customer.timeHere.minutes'> minutes </span> ago. )
+
+            </p>
+          </div>
+        <a href="#/" ng-click='updateCustNum()' ng-show="showCust">show all customers...</a>
+        <a href="#/" ng-click='updateCustNum()' ng-hide="showCust">collapse customers...</a>
+
+    </div>
+  </div> -->
+</div>
