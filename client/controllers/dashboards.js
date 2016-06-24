@@ -1,4 +1,4 @@
-discussionBoard.controller('DashBoardController', function($scope, UserFactory, $location){
+discussionBoard.controller('DashBoardController', function($scope, UserFactory, TopicFactory, $location){
 
 
   UserFactory.shareUser(function(data){
@@ -8,6 +8,18 @@ discussionBoard.controller('DashBoardController', function($scope, UserFactory, 
       $location.url('/');
     }
   })
+
+  TopicFactory.getcategories(function(data){
+    $scope.categories = data;
+    console.log("got the categories", $scope.categories);
+  })
+
+  // TopicFactory.index(function(data){
+  //   $scope.topics = data;
+  //   console.log("got the topics", $scope.topics);
+  // })
+
+
   // CustomerFactory.index(function(data){
   //   $scope.customers = data;
   //   for(var i=0; i<$scope.customers.length; i++){
@@ -29,21 +41,17 @@ discussionBoard.controller('DashBoardController', function($scope, UserFactory, 
   //     }
   //   })
   // }
-  // $scope.addCustomer = function(){
-  //   $scope.message = false;
-  //   CustomerFactory.create($scope.newCustomer, function(data){
-  //     $scope.message = data;
-  //   });
-  //   CustomerFactory.index(function(data){
-  //     $scope.customers = data;
-  //     for(var i=0; i<$scope.customers.length; i++){
-  //       var date = new Date($scope.customers[i].createdAt);
-  //       $scope.customers[i].createdAt = date.toDateString();
-  //     }
-  //
-  //
-  //   })
-  //   $scope.newCustomer = {};
-  // }
+  $scope.addTopic = function(){
+    $scope.newTopic.username = $scope.currentUser.name;
+    console.log("new topic to add", $scope.newTopic);
+    TopicFactory.create($scope.newTopic, function(data){
+      console.log("Added a topic", data);
+    });
+    TopicFactory.index(function(data){
+      $scope.topics = data;
+      console.log("All topics", $scope.topics);
+    })
+    $scope.newTopic = {};
+  }
 
 })//closes CustomersController

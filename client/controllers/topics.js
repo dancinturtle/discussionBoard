@@ -1,4 +1,4 @@
-discussionBoard.controller('TopicsController', function($scope){
+discussionBoard.controller('TopicsController', function($scope, TopicFactory){
   //
   // ProductFactory.index(function(data){
   //   $scope.products = data;

@@ -25,6 +25,13 @@ discussionBoard.factory('UserFactory', function($http){
       callback(res.message);
     })
   }
+
+  //just for function
+  factory.addcategory = function(category, callback){
+    $http.post('/addcat', category).success(function(res){
+      callback(res);
+    })
+  }
 //
 //
   return factory;
