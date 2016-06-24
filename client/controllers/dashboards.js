@@ -1,5 +1,13 @@
-discussionBoard.controller('DashBoardController', function($scope){
+discussionBoard.controller('DashBoardController', function($scope, UserFactory, $location){
 
+
+  UserFactory.shareUser(function(data){
+    $scope.currentUser = data[0];
+    console.log("Sharing!", $scope.currentUser);
+    if($scope.currentUser === undefined){
+      $location.url('/');
+    }
+  })
   // CustomerFactory.index(function(data){
   //   $scope.customers = data;
   //   for(var i=0; i<$scope.customers.length; i++){
