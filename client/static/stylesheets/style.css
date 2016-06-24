@@ -4,3 +4,22 @@
 .peanutgallery {
   margin-left: 50px;
 }
+.mainresponse img {
+  height: 30px;
+  display: inline-block;
+}
+.votes {
+  position: absolute;
+  display: inline-block;
+  right: 550px;
+
+}
+.mainresponse p {
+  display: inline-block;
+}
+.green {
+  color: green;
+}
+.red {
+  color: red;
+}
