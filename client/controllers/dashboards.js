@@ -55,6 +55,7 @@ discussionBoard.controller('DashBoardController', function($scope, UserFactory, 
   }
 
   $scope.addCat = function(){
+    console.log("new cat to add", $scope.newCat);
     TopicFactory.addCat($scope.newCat, function(data){
       console.log("Added a category", data);
     })
